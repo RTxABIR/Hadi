@@ -393,9 +393,9 @@ async def check_sms():
 
         text = (
             "✨ <b>OTP Received</b> ✨\n\n"
-            f"🌍 <b>Country:</b> {country}\n"
             f"⏰ <b>Time:</b> {date}\n"
             f"📞 <b>Number:</b> {number}\n"
+            f"🌍 <b>Country:</b> {country}\n"
             f"🔧 <b>Service:</b> {service}\n"
             f"🔐 <b>OTP:</b> <code>{otp}</code>\n"
             f"📝 <b>Message:</b> <i>{message}</i>\n\n"
