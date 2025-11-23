@@ -335,9 +335,12 @@ def login():
 # =====================================================
 def get_api_url():
     today = datetime.now().strftime("%Y-%m-%d")
+    start = f"{today} 00:00:00"
+    end = f"{today} 23:59:59"
+
     return (
-        f"{DATA_URL}?fdate1={today}%2000:00:00&fdate2={today}%2023:59:59&"
-        "sEcho=1&iColumns=7&iDisplayStart=0&iDisplayLength=50"
+        f"{DATA_URL}?fdate1={start}&fdate2={end}"
+        "&sEcho=1&iColumns=7&iDisplayStart=0&iDisplayLength=500"
     )
 
 # =====================================================
