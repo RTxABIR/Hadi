@@ -9,11 +9,9 @@ from datetime import datetime, timedelta
 from flask import Flask
 import threading
 from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup
-=====================================================
-
-HEALTH CHECK SERVER (REQUIRED FOR RENDER + UPTIMEROBOT)
-
-=====================================================
+#=====================================================
+#HEALTH CHECK SERVER (REQUIRED FOR RENDER + UPTIMEROBOT)
+#=====================================================
 
 app = Flask(name)
 
@@ -26,11 +24,9 @@ app.run(host="0.0.0.0", port=10000)
 
 threading.Thread(target=run_web).start()
 
-=====================================================
-
-ENVIRONMENT VARIABLES (SECURE)
-
-=====================================================
+#=====================================================
+#ENVIRONMENT VARIABLES (SECURE)
+#=====================================================
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
@@ -43,20 +39,16 @@ DATA_URL = BASE + "/ints/agent/res/data_smscdr.php"
 LOGIN_PAGE = BASE + "/ints/login"
 LOGIN_POST = BASE + "/ints/signin"
 
-=====================================================
-
-LOGGING
-
-=====================================================
+#=====================================================
+# LOGGING
+#=====================================================
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(message)s")
 bot = Bot(token=BOT_TOKEN)
 
-=====================================================
-
-REQUESTS SESSION
-
-=====================================================
+#=====================================================
+#REQUESTS SESSION
+##=====================================================
 
 session = requests.Session()
 session.headers.update({
@@ -65,15 +57,12 @@ session.headers.update({
 "Accept-Language": "en-US,en;q=0.9"
 })
 
-OTP REGEX
-
+#OTP REGEX
 OTP_REGEX = re.compile(r"\b\d{4,8}\b")
 
-=====================================================
-
-COUNTRY DETECTOR (ADD YOUR FULL DATA HERE)
-
-=====================================================
+#=====================================================
+# COUNTRY DETECTOR (ADD YOUR FULL DATA HERE)
+#=====================================================
 
 COUNTRIES = {
 "972": "🇮🇱 Israel",
@@ -89,16 +78,11 @@ COUNTRIES = {
 "963": "🇸🇾 Syria",
 "962": "🇯🇴 Jordan",
 "90": "🇹🇷 Turkey",
-"1": "🇺🇸 USA / Canada",
+"1": "🇺🇸 USA /🇨🇦 Canada",
 "44": "🇬🇧 United Kingdom",
 "33": "🇫🇷 France",
 "39": "🇮🇹 Italy",
 "34": "🇪🇸 Spain",
-
---- অতিরিক্ত দেশসমূহ ---
-
-North America (Area Code 1 - shared with USA/Canada)
-
 "1242": "🇧🇸 Bahamas",
 "1246": "🇧🇧 Barbados",
 "1268": "🇦🇬 Antigua & Barbuda",
@@ -117,9 +101,6 @@ North America (Area Code 1 - shared with USA/Canada)
 "1809": "🇩🇴 Dominican Republic",
 "1868": "🇹🇹 Trinidad & Tobago",
 "1876": "🇯🇲 Jamaica",
-
-Africa
-
 "20": "🇪🇬 Egypt",
 "27": "🇿🇦 South Africa",
 "212": "🇲🇦 Morocco",
@@ -180,9 +161,6 @@ Africa
 "297": "🇦🇼 Aruba",
 "298": "🇫🇴 Faroe Islands",
 "299": "🇬🇱 Greenland",
-
-South America
-
 "51": "🇵🇪 Peru",
 "52": "🇲🇽 Mexico",
 "53": "🇨🇺 Cuba",
@@ -200,9 +178,6 @@ South America
 "597": "🇸🇷 Suriname",
 "598": "🇺🇾 Uruguay",
 "599": "🇨🇼 Curaçao / 🇸🇽 Sint Maarten / 🇧🇶 Caribbean Netherlands",
-
-Europe
-
 "30": "🇬🇷 Greece",
 "31": "🇳🇱 Netherlands",
 "32": "🇧🇪 Belgium",
@@ -240,9 +215,6 @@ Europe
 "47": "🇳🇴 Norway",
 "48": "🇵🇱 Poland",
 "49": "🇩🇪 Germany",
-
-Asia
-
 "60": "🇲🇾 Malaysia",
 "61": "🇦🇺 Australia / 🇨🇽 Christmas Island / 🇨🇨 Cocos Islands",
 "62": "🇮🇩 Indonesia",
@@ -269,9 +241,6 @@ Asia
 "976": "🇲🇳 Mongolia",
 "977": "🇳🇵 Nepal",
 "98": "🇮🇷 Iran",
-
-Oceania
-
 "670": "🇹🇱 East Timor",
 "672": "🇳🇫 Norfolk Island / 🇦🇶 Antarctica",
 "673": "🇧🇳 Brunei",
@@ -293,13 +262,7 @@ Oceania
 "690": "🇹🇰 Tokelau",
 "691": "🇫🇲 Micronesia",
 "692": "🇲🇭 Marshall Islands",
-
-Russia & Central Asia
-
 "7": "🇷🇺 Russia / 🇰🇿 Kazakhstan",
-
-Other
-
 "259": "🇰🇲 Comoros (deprecated)",
 "293": "🇸🇭 St. Helena (deprecated)",
 "295": "🇸🇲 San Marino (deprecated)",
@@ -314,9 +277,6 @@ Other
 "995": "🇬🇪 Georgia",
 "996": "🇰🇬 Kyrgyzstan",
 "998": "🇺🇿 Uzbekistan",
-
-Special Codes
-
 "800": "🌐 International Toll-Free",
 "882": "🌐 International Networks",
 "883": "🌐 International Networks",
@@ -329,19 +289,15 @@ if number.startswith(code):
 return COUNTRIES[code]
 return "🌍 Unknown Country"
 
-=====================================================
-
-MEMORY-ONLY SENT KEYS (RENDER SAFE)
-
-=====================================================
+#=====================================================
+#MEMORY-ONLY SENT KEYS (RENDER SAFE)
+#=====================================================
 
 sent_keys = set()
 
-=====================================================
-
-LOGIN FUNCTION
-
-=====================================================
+#=====================================================
+#LOGIN FUNCTION
+#=====================================================
 
 def login():
 try:
@@ -370,11 +326,9 @@ except Exception as e:
     logging.error(f"Login Error: {e}")  
     return False
 
-=====================================================
-
-API URL GENERATOR
-
-=====================================================
+#=====================================================
+#API URL GENERATOR
+#=====================================================
 
 def get_api_url():
     now = datetime.now()
@@ -388,11 +342,9 @@ def get_api_url():
         "sEcho=1&iColumns=7&iDisplayStart=0&iDisplayLength=50"
     )
 
-=====================================================
-
-FETCH PANEL DATA
-
-=====================================================
+#=====================================================
+#FETCH PANEL DATA
+#=====================================================
 
 def fetch_data():
 try:
@@ -411,11 +363,9 @@ if "login" in response.text.lower():
 except Exception:  
     return None
 
-=====================================================
-
-CHECK OTP + SEND MESSAGE
-
-=====================================================
+#=====================================================
+# CHECK OTP + SEND MESSAGE
+#=====================================================
 
 async def check_sms():
     data = fetch_data()
@@ -479,11 +429,9 @@ async def check_sms():
         except Exception as e:  
             logging.error(f"Telegram error: {e}")
 
-=====================================================
-
-MAIN LOOP
-
-=====================================================
+#=====================================================
+# MAIN LOOP
+#=====================================================
 
 async def main():
 if not login():
