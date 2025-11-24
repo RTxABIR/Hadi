@@ -352,44 +352,45 @@ def fetch_data():
 # =====================================================
 # CHECK OTP + SEND MESSAGE
 # =====================================================
-async def check_sms():
-    data = fetch_data()
-    if not data or "aaData" not in data:
-        return
+for row in data["aaData"]:
+    if len(row) < 6:
+        continue
 
-    for row in data["aaData"]:
-        if len(row) < 6:
-            continue
+    date = str(row[0]).strip()
+    number = str(row[2]).strip()
+    service = str(row[3]).strip()
+    message = str(row[5]).strip()
 
-        date = str(row[0]).strip()
-        number = str(row[2]).strip()
-        service = str(row[3]).strip()
-        message = str(row[5]).strip()
+    # Number masking
+    if len(number) >= 7:
+        masked_number = number[:4] + "***" + number[-4:]
+    else:
+        masked_number = number  # ছোট নম্বর হলে mask করবে না
 
-        matches = OTP_REGEX.findall(message)
-        if not matches:
-            continue
+    matches = OTP_REGEX.findall(message)
+    if not matches:
+        continue
 
-        otp = max(matches, key=len)
-        key = f"{number}|{otp}|{date}"
+    otp = max(matches, key=len)
+    key = f"{number}|{otp}|{date}"
 
-        if key in sent_keys:
-            continue
+    if key in sent_keys:
+        continue
 
-        sent_keys.add(key)
+    sent_keys.add(key)
 
-        country = get_country(number)
+    country = get_country(number)
 
-        text = (
-            "✨ <b>OTP Received</b> ✨\n\n"
-            f"⏰ <b>Time:</b> {date}\n"
-            f"📞 <b>Number:</b> {number}\n"
-            f"🌍 <b>Country:</b> {country}\n"
-            f"🔧 <b>Service:</b> {service}\n"
-            f"🔐 <b>OTP:</b> <code>{otp}</code>\n"
-            f"📝 <b>Message:</b> <i>{message}</i>\n\n"
-            "<b>POWERED BY</b> @RTX_ABIR_4090"
-        )
+    text = (
+        "✨ <b>OTP Received</b> ✨\n\n"
+        f"⏰ <b>Time:</b> {date}\n"
+        f"📞 <b>Number:</b> {masked_number}\n"
+        f"🌍 <b>Country:</b> {country}\n"
+        f"🔧 <b>Service:</b> {service}\n"
+        f"🔐 <b>OTP:</b> <code>{otp}</code>\n"
+        f"📝 <b>Message:</b> <i>{message}</i>\n\n"
+        "<b>POWERED BY</b> @RTX_ABIR_4090"
+    )
 
         keyboard = InlineKeyboardMarkup([
             [InlineKeyboardButton("🧑‍💻Dev", url="https://t.me/RTX_ABIR_4090")],
