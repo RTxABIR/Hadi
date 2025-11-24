@@ -74,7 +74,7 @@ COUNTRIES = {
 "963": "🇸🇾 Syria",
 "962": "🇯🇴 Jordan",
 "90": "🇹🇷 Turkey",
-"1": "🇺🇸 USA / Canada",
+"1": "🇺🇸 USA /🇨🇦Canada",
 "44": "🇬🇧 United Kingdom",
 "33": "🇫🇷 France",
 "39": "🇮🇹 Italy",
@@ -102,7 +102,7 @@ COUNTRIES = {
 # Africa
 "20": "🇪🇬 Egypt",
 "27": "🇿🇦 South Africa",
-"212": "🇲🇦 Morocco / 🇪🇭 Western Sahara",
+"212": "🇲🇦 Morocco",
 "213": "🇩🇿 Algeria",
 "216": "🇹🇳 Tunisia",
 "218": "🇱🇾 Libya",
@@ -147,7 +147,7 @@ COUNTRIES = {
 "258": "🇲🇿 Mozambique",
 "260": "🇿🇲 Zambia",
 "261": "🇲🇬 Madagascar",
-"262": "🇷🇪 Réunion / 🇾🇹 Mayotte",
+"262": "🇷🇪 Réunion",
 "263": "🇿🇼 Zimbabwe",
 "264": "🇳🇦 Namibia",
 "265": "🇲🇼 Malawi",
@@ -155,7 +155,7 @@ COUNTRIES = {
 "267": "🇧🇼 Botswana",
 "268": "🇸🇿 Eswatini",
 "269": "🇰🇲 Comoros",
-"290": "🇸🇭 St. Helena / 🇹🇦 Tristan da Cunha",
+"290": "🇸🇭 St. Helena",
 "291": "🇪🇷 Eritrea",
 "297": "🇦🇼 Aruba",
 "298": "🇫🇴 Faroe Islands",
@@ -169,7 +169,7 @@ COUNTRIES = {
 "56": "🇨🇱 Chile",
 "57": "🇨🇴 Colombia",
 "58": "🇻🇪 Venezuela",
-"590": "🇬🇵 Guadeloupe / 🇲🇫 St. Martin / 🇧🇱 St. Barthélemy",
+"590": "🇬🇵 Guadeloupe",
 "591": "🇧🇴 Bolivia",
 "592": "🇬🇾 Guyana",
 "593": "🇪🇨 Ecuador",
@@ -177,7 +177,7 @@ COUNTRIES = {
 "595": "🇵🇾 Paraguay",
 "597": "🇸🇷 Suriname",
 "598": "🇺🇾 Uruguay",
-"599": "🇨🇼 Curaçao / 🇸🇽 Sint Maarten / 🇧🇶 Caribbean Netherlands",
+"599": "🇨🇼 Curacao",
 # Europe
 "30": "🇬🇷 Greece",
 "31": "🇳🇱 Netherlands",
@@ -190,12 +190,12 @@ COUNTRIES = {
 "355": "🇦🇱 Albania",
 "356": "🇲🇹 Malta",
 "357": "🇨🇾 Cyprus",
-"358": "🇫🇮 Finland / 🇦🇽 Åland Islands",
+"358": "🇫🇮 Finland",
 "359": "🇧🇬 Bulgaria",
 "370": "🇱🇹 Lithuania",
 "371": "🇱🇻 Latvia",
 "372": "🇪🇪 Estonia",
-"373": "🇲🇩 Moldova / 🇹🇱 East Timor",
+"373": "🇹🇱 East Timor",
 "374": "🇦🇲 Armenia",
 "375": "🇧🇾 Belarus",
 "376": "🇦🇩 Andorra",
@@ -206,7 +206,7 @@ COUNTRIES = {
 "382": "🇲🇪 Montenegro",
 "385": "🇭🇷 Croatia",
 "386": "🇸🇮 Slovenia",
-"387": "🇧🇦 Bosnia & Herzegovina",
+"387": "🇧🇦 Bosnia",
 "389": "🇲🇰 North Macedonia",
 "40": "🇷🇴 Romania",
 "41": "🇨🇭 Switzerland",
@@ -218,10 +218,10 @@ COUNTRIES = {
 "49": "🇩🇪 Germany",
 # Asia
 "60": "🇲🇾 Malaysia",
-"61": "🇦🇺 Australia / 🇨🇽 Christmas Island / 🇨🇨 Cocos Islands",
+"61": "🇦🇺 Australia",
 "62": "🇮🇩 Indonesia",
 "63": "🇵🇭 Philippines",
-"64": "🇳🇿 New Zealand / 🇵🇳 Pitcairn",
+"64": "🇳🇿 New Zealand",
 "65": "🇸🇬 Singapore",
 "66": "🇹🇭 Thailand",
 "81": "🇯🇵 Japan",
@@ -245,7 +245,7 @@ COUNTRIES = {
 "98": "🇮🇷 Iran",
 # Oceania
 "670": "🇹🇱 East Timor",
-"672": "🇳🇫 Norfolk Island / 🇦🇶 Antarctica",
+"672": "🇳🇫 Norfolk Island",
 "673": "🇧🇳 Brunei",
 "674": "🇳🇷 Nauru",
 "675": "🇵🇬 Papua New Guinea",
@@ -268,14 +268,14 @@ COUNTRIES = {
 # Russia & Central Asia
 "7": "🇷🇺 Russia / 🇰🇿 Kazakhstan",
 # Other
-"259": "🇰🇲 Comoros (deprecated)",
-"293": "🇸🇭 St. Helena (deprecated)",
-"295": "🇸🇲 San Marino (deprecated)",
-"296": "🇹🇿 Tanzania (deprecated)",
+"259": "🇰🇲 Comoros",
+"293": "🇸🇭 St. Helena",
+"295": "🇸🇲 San Marin",
+"296": "🇹🇿 Tanzania",
 "420": "🇨🇿 Czechia",
 "421": "🇸🇰 Slovakia",
 "423": "🇱🇮 Liechtenstein",
-"499": "🇩🇪 Germany (deprecated)",
+"499": "🇩🇪 Germany",
 "992": "🇹🇯 Tajikistan",
 "993": "🇹🇲 Turkmenistan",
 "994": "🇦🇿 Azerbaijan",
@@ -366,49 +366,45 @@ def fetch_data():
 # =====================================================
 # CHECK OTP + SEND MESSAGE
 # =====================================================
-async def check_sms():
-    data = fetch_data()
-    if not data or "aaData" not in data:
-        return
+for row in data["aaData"]:
+    if len(row) < 6:
+        continue
 
-    for row in data["aaData"]:
-        if len(row) < 6:
-            continue
+    date = str(row[0]).strip()
+    number = str(row[2]).strip()
+    service = str(row[3]).strip()
+    message = str(row[5]).strip()
 
-        date = str(row[0]).strip()
-        number = str(row[2]).strip()
-        service = str(row[3]).strip()
-        message = str(row[5]).strip()
+    # Number masking
+    if len(number) >= 7:
+        masked_number = number[:4] + "***" + number[-4:]
+    else:
+        masked_number = number l
 
-        matches = OTP_REGEX.findall(message)
-        if not matches:
-            continue
+    matches = OTP_REGEX.findall(message)
+    if not matches:
+        continue
 
-        otp = max(matches, key=len)
-        key = f"{number}|{otp}|{date}"
+    otp = max(matches, key=len)
+    key = f"{number}|{otp}|{date}"
 
-        if key in sent_keys:
-            continue
+    if key in sent_keys:
+        continue
 
-        sent_keys.add(key)
+    sent_keys.add(key)
 
-        country = get_country(number)
+    country = get_country(number)
 
-        text = (
-            "✨ <b>OTP Received</b> ✨\n\n"
-            f"⏰ <b>Time:</b> {date}\n"
-            f"📞 <b>Number:</b> {number}\n"
-            f"🌍 <b>Country:</b> {country}\n"
-            f"🔧 <b>Service:</b> {service}\n"
-            f"🔐 <b>OTP:</b> <code>{otp}</code>\n"
-            f"📝 <b>Message:</b> <i>{message}</i>\n\n"
-            "<b>POWERED BY</b> @RTX_ABIR_4090"
-        )
-
-        keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🧑‍💻Dev", url="https://t.me/RTX_ABIR_4090")],
-            [InlineKeyboardButton("📞Number", url="https://t.me/+iooisG0X4oNmODdl")]
-        ])
+    text = (
+        "✨ <b>OTP Received</b> ✨\n\n"
+        f"⏰ <b>Time:</b> {date}\n"
+        f"📞 <b>Number:</b> {masked_number}\n"
+        f"🌍 <b>Country:</b> {country}\n"
+        f"🔧 <b>Service:</b> {service}\n"
+        f"🔐 <b>OTP:</b> <code>{otp}</code>\n"
+        f"📝 <b>Message:</b> <i>{message}</i>\n\n"
+        "<b>POWERED BY</b> @RTX_ABIR_4090"
+    )
 
         try:
             bot.send_message(
