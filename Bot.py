@@ -382,21 +382,20 @@ for row in data["aaData"]:
     country = get_country(number)
 
     text = (
-        "✨ <b>OTP Received</b> ✨\n\n"
-        f"⏰ <b>Time:</b> {date}\n"
-        f"📞 <b>Number:</b> {masked_number}\n"
-        f"🌍 <b>Country:</b> {country}\n"
-        f"🔧 <b>Service:</b> {service}\n"
-        f"🔐 <b>OTP:</b> <code>{otp}</code>\n"
-        f"📝 <b>Message:</b> <i>{message}</i>\n\n"
-        "<b>POWERED BY</b> @RTX_ABIR_4090"
-    )
+    "✨ <b>OTP Received</b> ✨\n\n"
+    f"⏰ <b>Time:</b> {date}\n"
+    f"📞 <b>Number:</b> {masked_number}\n"
+    f"🌍 <b>Country:</b> {country}\n"
+    f"🔧 <b>Service:</b> {service}\n"
+    f"🔐 <b>OTP:</b> <code>{otp}</code>\n"
+    f"📝 <b>Message:</b> <i>{message}</i>\n\n"
+    "<b>POWERED BY</b> @RTX_ABIR_4090"
+)
 
-        keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton("🧑‍💻Dev", url="https://t.me/RTX_ABIR_4090")],
-            [InlineKeyboardButton("📞Number", url="https://t.me/+iooisG0X4oNmODdl")]
-        ])
-
+keyboard = InlineKeyboardMarkup([
+    [InlineKeyboardButton("🧑‍💻Dev", url="https://t.me/RTX_ABIR_4090")],
+    [InlineKeyboardButton("📞Number", url="https://t.me/+iooisG0X4oNmODdl")]
+])
         try:
             bot.send_message(
                 chat_id=CHAT_ID,
