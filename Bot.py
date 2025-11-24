@@ -61,6 +61,7 @@ OTP_REGEX = re.compile(r"\b\d{4,8}\b")
 # COUNTRY DETECTOR (ADD YOUR FULL DATA HERE)
 # =====================================================
 COUNTRIES = {
+"1242": "🇧🇸 Bahamas",
 "972": "🇮🇱 Israel",
 "880": "🇧🇩 Bangladesh",
 "91": "🇮🇳 India",
@@ -74,14 +75,11 @@ COUNTRIES = {
 "963": "🇸🇾 Syria",
 "962": "🇯🇴 Jordan",
 "90": "🇹🇷 Turkey",
-"1": "🇺🇸 USA /🇨🇦Canada",
+"1": "🇺🇸 USA /🇨🇦 Canada",
 "44": "🇬🇧 United Kingdom",
 "33": "🇫🇷 France",
 "39": "🇮🇹 Italy",
 "34": "🇪🇸 Spain",
-# --- অতিরিক্ত দেশসমূহ ---
-# North America (Area Code 1 - shared with USA/Canada)
-"1242": "🇧🇸 Bahamas",
 "1246": "🇧🇧 Barbados",
 "1268": "🇦🇬 Antigua & Barbuda",
 "1284": "🇻🇬 British Virgin Islands",
@@ -95,11 +93,10 @@ COUNTRIES = {
 "1684": "🇦🇸 American Samoa",
 "1758": "🇱🇨 St. Lucia",
 "1767": "🇩🇲 Dominica",
-"1784": "🇻🇨 St. Vincent & Grenadines",
+"1784": "🇻🇨 St. Vincent",
 "1809": "🇩🇴 Dominican Republic",
 "1868": "🇹🇹 Trinidad & Tobago",
 "1876": "🇯🇲 Jamaica",
-# Africa
 "20": "🇪🇬 Egypt",
 "27": "🇿🇦 South Africa",
 "212": "🇲🇦 Morocco",
@@ -129,7 +126,7 @@ COUNTRIES = {
 "240": "🇬🇶 Equatorial Guinea",
 "241": "🇬🇦 Gabon",
 "242": "🇨🇬 Congo - Brazzaville",
-"243": "🇨🇩 Congo - Kinshasa (DRC)",
+"243": "🇨🇩 Congo - Kinshasa",
 "244": "🇦🇴 Angola",
 "245": "🇬🇼 Guinea-Bissau",
 "246": "🇮🇴 British Indian Ocean Territory",
@@ -160,7 +157,6 @@ COUNTRIES = {
 "297": "🇦🇼 Aruba",
 "298": "🇫🇴 Faroe Islands",
 "299": "🇬🇱 Greenland",
-# South America
 "51": "🇵🇪 Peru",
 "52": "🇲🇽 Mexico",
 "53": "🇨🇺 Cuba",
@@ -177,8 +173,7 @@ COUNTRIES = {
 "595": "🇵🇾 Paraguay",
 "597": "🇸🇷 Suriname",
 "598": "🇺🇾 Uruguay",
-"599": "🇨🇼 Curacao",
-# Europe
+"599": "🇨🇼 Curaça",
 "30": "🇬🇷 Greece",
 "31": "🇳🇱 Netherlands",
 "32": "🇧🇪 Belgium",
@@ -190,7 +185,7 @@ COUNTRIES = {
 "355": "🇦🇱 Albania",
 "356": "🇲🇹 Malta",
 "357": "🇨🇾 Cyprus",
-"358": "🇫🇮 Finland",
+"358": "🇫🇮 Finlan",
 "359": "🇧🇬 Bulgaria",
 "370": "🇱🇹 Lithuania",
 "371": "🇱🇻 Latvia",
@@ -206,7 +201,7 @@ COUNTRIES = {
 "382": "🇲🇪 Montenegro",
 "385": "🇭🇷 Croatia",
 "386": "🇸🇮 Slovenia",
-"387": "🇧🇦 Bosnia",
+"387": "🇧🇦 Bosnia & Herzegovina",
 "389": "🇲🇰 North Macedonia",
 "40": "🇷🇴 Romania",
 "41": "🇨🇭 Switzerland",
@@ -218,10 +213,10 @@ COUNTRIES = {
 "49": "🇩🇪 Germany",
 # Asia
 "60": "🇲🇾 Malaysia",
-"61": "🇦🇺 Australia",
+"61": "🇦🇺 Australia / 🇨🇽 Christmas Island / 🇨🇨 Cocos Islands",
 "62": "🇮🇩 Indonesia",
 "63": "🇵🇭 Philippines",
-"64": "🇳🇿 New Zealand",
+"64": "🇳🇿 New Zealand / 🇵🇳 Pitcairn",
 "65": "🇸🇬 Singapore",
 "66": "🇹🇭 Thailand",
 "81": "🇯🇵 Japan",
@@ -245,7 +240,7 @@ COUNTRIES = {
 "98": "🇮🇷 Iran",
 # Oceania
 "670": "🇹🇱 East Timor",
-"672": "🇳🇫 Norfolk Island",
+"672": "🇳🇫 Norfolk Island / 🇦🇶 Antarctica",
 "673": "🇧🇳 Brunei",
 "674": "🇳🇷 Nauru",
 "675": "🇵🇬 Papua New Guinea",
@@ -268,14 +263,14 @@ COUNTRIES = {
 # Russia & Central Asia
 "7": "🇷🇺 Russia / 🇰🇿 Kazakhstan",
 # Other
-"259": "🇰🇲 Comoros",
-"293": "🇸🇭 St. Helena",
-"295": "🇸🇲 San Marin",
-"296": "🇹🇿 Tanzania",
+"259": "🇰🇲 Comoros (deprecated)",
+"293": "🇸🇭 St. Helena (deprecated)",
+"295": "🇸🇲 San Marino (deprecated)",
+"296": "🇹🇿 Tanzania (deprecated)",
 "420": "🇨🇿 Czechia",
 "421": "🇸🇰 Slovakia",
 "423": "🇱🇮 Liechtenstein",
-"499": "🇩🇪 Germany",
+"499": "🇩🇪 Germany (deprecated)",
 "992": "🇹🇯 Tajikistan",
 "993": "🇹🇲 Turkmenistan",
 "994": "🇦🇿 Azerbaijan",
@@ -376,10 +371,10 @@ for row in data["aaData"]:
     message = str(row[5]).strip()
 
     # Number masking
-    if len(number) >= 7:
+    if len(number) >= 6:
         masked_number = number[:4] + "***" + number[-4:]
     else:
-        masked_number = number l
+        masked_number = number  
 
     matches = OTP_REGEX.findall(message)
     if not matches:
@@ -405,6 +400,11 @@ for row in data["aaData"]:
         f"📝 <b>Message:</b> <i>{message}</i>\n\n"
         "<b>POWERED BY</b> @RTX_ABIR_4090"
     )
+
+        keyboard = InlineKeyboardMarkup([
+            [InlineKeyboardButton("🧑‍💻Dev", url="https://t.me/RTX_ABIR_4090")],
+            [InlineKeyboardButton("📞Number", url="https://t.me/+iooisG0X4oNmODdl")]
+        ])
 
         try:
             bot.send_message(
