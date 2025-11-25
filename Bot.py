@@ -38,6 +38,7 @@ DATA_URL = BASE + "/ints/agent/res/data_smscdr.php"
 LOGIN_PAGE = BASE + "/ints/login"
 LOGIN_POST = BASE + "/ints/signin"
 
+
 # =====================================================
 # LOGGING
 # =====================================================
@@ -335,12 +336,9 @@ def login():
 # =====================================================
 def get_api_url():
     today = datetime.now().strftime("%Y-%m-%d")
-    start = f"{today} 00:00:00"
-    end = f"{today} 23:59:59"
-
     return (
-        f"{DATA_URL}?fdate1={start}&fdate2={end}"
-        "&sEcho=1&iColumns=7&iDisplayStart=0&iDisplayLength=500"
+        f"{DATA_URL}?fdate1={today}%2000:00:00&fdate2={today}%2023:59:59&"
+        "sEcho=1&iColumns=7&iDisplayStart=0&iDisplayLength=50"
     )
 
 # =====================================================
@@ -366,45 +364,44 @@ def fetch_data():
 # =====================================================
 # CHECK OTP + SEND MESSAGE
 # =====================================================
-for row in data["aaData"]:
-    if len(row) < 6:
-        continue
+async def check_sms():
+    data = fetch_data()
+    if not data or "aaData" not in data:
+        return
 
-    date = str(row[0]).strip()
-    number = str(row[2]).strip()
-    service = str(row[3]).strip()
-    message = str(row[5]).strip()
+    for row in data["aaData"]:
+        if len(row) < 6:
+            continue
 
-    # Number masking
-    if len(number) >= 6:
-        masked_number = number[:4] + "***" + number[-4:]
-    else:
-        masked_number = number  
+        date = str(row[0]).strip()
+        number = str(row[2]).strip()
+        service = str(row[3]).strip()
+        message = str(row[5]).strip()
 
-    matches = OTP_REGEX.findall(message)
-    if not matches:
-        continue
+        matches = OTP_REGEX.findall(message)
+        if not matches:
+            continue
 
-    otp = max(matches, key=len)
-    key = f"{number}|{otp}|{date}"
+        otp = max(matches, key=len)
+        key = f"{number}|{otp}|{date}"
 
-    if key in sent_keys:
-        continue
+        if key in sent_keys:
+            continue
 
-    sent_keys.add(key)
+        sent_keys.add(key)
 
-    country = get_country(number)
+        country = get_country(number)
 
-    text = (
-        "✨ <b>OTP Received</b> ✨\n\n"
-        f"⏰ <b>Time:</b> {date}\n"
-        f"📞 <b>Number:</b> {masked_number}\n"
-        f"🌍 <b>Country:</b> {country}\n"
-        f"🔧 <b>Service:</b> {service}\n"
-        f"🔐 <b>OTP:</b> <code>{otp}</code>\n"
-        f"📝 <b>Message:</b> <i>{message}</i>\n\n"
-        "<b>POWERED BY</b> @RTX_ABIR_4090"
-    )
+        text = (
+            "✨ <b>OTP Received</b> ✨\n\n"
+            f"⏰ <b>Time:</b> {date}\n"
+            f"📞 <b>Number:</b> {number}\n"
+            f"🌍 <b>Country:</b> {country}\n"
+            f"🔧 <b>Service:</b> {service}\n"
+            f"🔐 <b>OTP:</b> <code>{otp}</code>\n"
+            f"📝 <b>Message:</b> <i>{message}</i>\n\n"
+            "<b>POWERED BY</b> @RTX_ABIR_4090"
+        )
 
         keyboard = InlineKeyboardMarkup([
             [InlineKeyboardButton("🧑‍💻Dev", url="https://t.me/RTX_ABIR_4090")],
